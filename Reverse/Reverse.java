@@ -6,9 +6,7 @@
 
 //	Java program to Reverse a String using swapping
 	// of variables
-	import java.lang.*;
-	import java.io.*;
-	import java.util.*;
+
 	 
 	
 	public class Reverse {
