@@ -1,6 +1,6 @@
 package com.phonebook;
 
-import java.util.Comparator;
+import java.util.*;
 
 public class SortPhone implements Comparator<Person>{
 

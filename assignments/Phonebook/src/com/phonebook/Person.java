@@ -1,5 +1,5 @@
 package com.phonebook;
-
+import java.util.Comparator;
 
 public class Person {
 
@@ -41,6 +41,33 @@ public class Person {
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 	}
+	
+	 public static Comparator<Person> personname= new Comparator<Person>() {
+
+			public int compare(Person s1, Person s2) {
+			   String PerName1 = s1.getFirstName().toUpperCase();
+			   String PerName2 = s2.getFirstName().toUpperCase();
+
+			  
+			   return PerName1.compareTo(PerName2);
+			}
+		    };
+	
+	
+	public static Comparator<Person> perid= new Comparator<Person>() {
+
+		public int compare(Person p1, Person p2) {
+
+		   int person1 = p1.getId();
+		   int person2 = p2.getId();
+
+		   /*For ascending order*/
+		   return person1-person2;
+		}
+	
+	};
+	
+	
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber="

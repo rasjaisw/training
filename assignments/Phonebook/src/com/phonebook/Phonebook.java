@@ -2,6 +2,7 @@ package com.phonebook;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,10 +16,21 @@ public class Phonebook   {
 		System.out.println("3 . Search by name");
 		System.out.println("4 . Search by phonenumber");
 		System.out.println("5 . Search by id");
-		System.out.println("6 . Exit");
+		System.out.println("6 . Sorted list on id");
+		System.out.println("7 . Sorted list on name");
+		System.out.println("8 . exit");
 		List<Person> per=new ArrayList<Person>();
 		IPhonrBook phonebook=new PhoneBookImpl();
 		Person person=new Person();
+		Person person1=new Person(5, "Rashmi", "Jaiswal", 954541456);
+		Person person2=new Person(8, "eashmi", "Jaiswal", 954541456);
+		Person person3=new Person(2, "kashmi", "Jaiswal", 954541456);
+		Person person4=new Person(9, "washmi", "Jaiswal", 954541456);
+		
+		per.add(person1);
+		per.add(person2);
+		per.add(person3);
+		per.add(person4);
 		Scanner scan=new Scanner(System.in);
 		
 		while(true)
@@ -89,15 +101,36 @@ public class Phonebook   {
 			     phonebook.search(personId,person);
 
 			    break;
-			  
-		case 6: 
-			System.out.println("BYE");
+		case 6:
+			System.out.println("sorted list is:");
+			 Collections.sort(per, Person.perid);
+			   for(Person strid: per){
+					System.out.println(strid);
+			   }
+			  break;
+		case 7 :
+		
+			System.out.println("sorted list on name");
+			
+			   Collections.sort(per, Person.personname);
+
+			  // for(Person strname: per){
+				//	System.out.println(strname);
+			   per.stream().forEach((i->{System.out.println(i);}));
+			   
+			   //}
+			   break;
+			
+		case 9: 
+			//System.out.println("BYE");
 			System.exit(0);
 			
 			break;
-		}
+			
+		
 		}
 
 	}
 
+}
 }
