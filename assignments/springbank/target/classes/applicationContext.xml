@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="address" class="com.spring.bank.springbank.Address">
+   <property name="street" value="camphr bridge"/>
+   <property name="houseNumber" value="123"/>
+   <property name="zipCode" value="4567"/>
+   <property name="city" value="Pune"/>
+   </bean>
+   
+   <bean id="contact" class="com.spring.bank.springbank.Contact">
+   <property name="mobile" value="789787"/>
+   <property name="phone" value="6786766"/>
+   <property name="email" value="hjgf@hh.com"/>
+   <property name="address" ref="address"/>
+   </bean>
+   
+   
+   <bean id="customer" class="com.spring.bank.springbank.Customer">
+   <property name="firstName" value="rashmi"/>
+   <property name="lastName" value="Jaiswal"/>
+   <property name="customerId" value="0087"/>
+   <property name="contact" ref="contact"/>
+   </bean>
+   
+   <bean id="bank" class="com.spring.bank.springbank.Bank">
+   <property name="name" value="camphr bridge"/>
+   <property name="customer" ref="customer"/>
+   </bean>
+   
+   <bean id="checkingaccount" class="com.spring.bank.springbank.CheckingAccount">
+   <property name="balance" value="1000"/>
+   <property name="interestRate" value="10"/>
+   <property name="period" value="7"/>
+   
+   </bean>
+   
+   
+   <bean id="savingaccount" class="com.spring.bank.springbank.SavingAccount">
+   <property name="balance" value="1000"/>
+   <property name="accountNumber" value="10"/>
+   </bean>
+   
+   
+   
+</beans>
