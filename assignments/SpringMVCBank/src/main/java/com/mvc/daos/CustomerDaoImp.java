@@ -1,6 +1,6 @@
 package com.mvc.daos;
 
-import javax.sql.DataSource;
+//import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -18,6 +18,7 @@ public class CustomerDaoImp implements CustomerDaoInterface
 		this.jdbcTemplate=jdbcTemplate;
 		
 	}
+	
 	
 	public int insertCustomer(Customer c) {
 		String query = "insert into customer values ('"+c.getFname()+"','"+c.getLname()+"','"+c.getAddress()+"','"+c.getEmail()+"','"+c.getNumber()+"')";  

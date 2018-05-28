@@ -30,5 +30,23 @@
   <constructor-arg name="jdbcTemplate" ref="jdbcTemplate"></constructor-arg> 
 </bean>  
      
+     
+     <bean id="account" class="com.mvc.models.SavingAccount">   
+</bean>  
+  
+  <bean id="accountdao" class="com.mvc.daos.SavingAccountDaoImpl">  
+  <constructor-arg name="jdbcTemplate" ref="jdbcTemplate"></constructor-arg> 
+</bean>  
+     
+    
+    <bean id="custService" class="services.CustomerService" scope="prototype">   
+</bean>  
+  
+ 
+     <bean id="savingAccountService" class="services.SavingAccountService" scope="prototype">   
+</bean>  
+    
+    
+    
     
 </beans>
